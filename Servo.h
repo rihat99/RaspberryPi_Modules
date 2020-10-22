@@ -4,7 +4,8 @@ class Servo {
 public:
     explicit Servo(int pinNum);
 
-    void setAngle(int angle);
+    void setAngle(double angle);
+    void loopRotate(int from, int to, int speedDelay, int stopDelay);
 
 private:
     int servoPin;
