@@ -1,21 +1,28 @@
 #pragma once
 
-struct Unit {
-    double in_metres;
+namespace PI {
 
-    Unit(double data);
-    double meters() const;
-    double centimeters() const;
-    double inches() const;
-};
+    struct Unit {
+        double in_metres;
 
-class UltrasonicSensor {
-public:
-    UltrasonicSensor(int trig_, int echo_);
+        Unit(double data);
 
-    Unit measure() const;
-private:
-    int trig;
-    int echo;
-};
+        double meters() const;
 
+        double centimeters() const;
+
+        double inches() const;
+    };
+
+    class UltrasonicSensor {
+    public:
+        UltrasonicSensor(int trig_, int echo_);
+
+        Unit measure() const;
+
+    private:
+        int trig;
+        int echo;
+    };
+
+}//PI

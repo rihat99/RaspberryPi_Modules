@@ -1,12 +1,17 @@
 #pragma once
 
-class Servo {
-public:
-    explicit Servo(int pinNum);
+namespace PI {
 
-    void setAngle(double angle);
-    void loopRotate(int from, int to, int speedDelay, int stopDelay);
+    class Servo {
+    public:
+        explicit Servo(int pinNum);
 
-private:
-    int servoPin;
-};
+        void setAngle(double angle);
+
+        void loopRotate(int from, int to, int speedDelay, int stopDelay);
+
+    private:
+        int servoPin;
+    };
+
+}//PI
