@@ -107,11 +107,19 @@ namespace PI {
         cur_x += str.size();
         cur_x = cur_x % 16;
         line += str;
+        string line1, line2;
+        if (line.size() > 31) {
+            line = string(line.end() - 32, line.end());
+        }
         if (line.size() > 15) {
-            line = string(line.begin() + line.size() - 16, line.end());
+            line1 = string(line.begin(), line.begin() + 16);
+            line2 = string(line.begin() + 16, line.end());
+        } else {
+            line1 = line;
         }
         clear();
-        write(0, 0, line);
+        write(0, 0, line1);
+        write(0, 1, line2);
     }
 
     void Display::loopWord(int y, string str) {
